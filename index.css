@@ -34,6 +34,7 @@ body{
 	width: 100vw;
 	height: 100vh;
 	display: flex;
+	/display: none;
 	flex-direction: column;
 	justify-content: center;
 }
@@ -42,14 +43,13 @@ body{
 .helloContainer{
 	position: relative;
 	display: flex;
-	
 	position: absolute;
 	/right: 60vw;
 	/align-self: center;
 }
 .hello{
 	font-family: code_bold;
-	font-size: 11em;
+	font-size: 9em;
 	right: 50vw;
 	transform: translate(2em,-.9em);
 	position: absolute;
@@ -61,7 +61,7 @@ body{
 }
 .from{
 	font-family: code_bold;
-	font-size: 7em;
+	font-size: 5em;
 	letter-spacing: .1em;
 	-webkit-text-stroke: 3px #222222;
 	position: absolute;
@@ -77,7 +77,7 @@ body{
 	top: 0;
 	left: 0;
 	background: #F2F2F2;
-	width: 5.3em;
+	width: 59.4%;
 	height: 100%;
 	position: absolute;
 	z-index: -1;
@@ -86,7 +86,7 @@ body{
 	top: 0;
 	right: 0;
 	background: #222222;
-	width: 3.64em;
+	width: 41.6%;
 	height: 100%;
 	position: absolute;
 	z-index: -1;
@@ -94,7 +94,7 @@ body{
 .rubberbandContainer{
 	/background: rgba(255,255,255,.8);
 	font-family: code_bold;
-	font-size: 8em;
+	font-size: 6em;
 	position: absolute;
 	border: 1px solid #111111;
 	align-self: center;
@@ -106,4 +106,159 @@ body{
 }
 .rubberband span{
 	color: white;
+}
+
+
+
+
+
+
+
+
+/* headline */
+.whatWeDoContainer{
+	position: absolute;
+	/display: flex;
+	display: none;
+	flex-direction: row;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+}
+.headline{
+	font-family: code_bold;
+	color: white;
+	font-size: 5em;
+	position: absolute;
+	align-self: flex-end;
+	/top: 0;
+	margin-top: .5em;
+	transform: translateX(-.5em);
+}
+.leftContent{
+	position: relative;
+	width: 70vwvw;
+	display: flex;
+	flex-direction: column;
+}
+.primary{
+	top: 25%;
+	position: relative;
+	width: 70vw;
+}
+
+.primary .title > span{
+	position: relative;
+	color: #FEFEFE;
+	font-family: code_REGULAR;
+	padding-left: 1.5em;
+	font-size: 2.2em;
+}
+.primary .title > span > span{
+	font-family: quicksand_medium;
+	color: #000000;
+} 
+.primary .title span::after{
+	position: absolute;
+	right: -.1em;
+	content: '';
+	height: 120%;
+	width: 6em;
+	background: #FEFEFE;
+	z-index: -1;
+}
+
+/* features */
+.features{
+	padding: 1em;
+	margin: 1em;
+	margin-top: 2em;
+	margin-left: 2em;
+	display: flex;
+	justify-content: space-between;
+}
+.features .box{
+	display: flex;
+	justify-content: center;
+	padding: 1em 2em;
+	/overflow: hidden;
+	background: #F1F1F1;
+}
+.box span{
+	font-size: 2em;
+	/flex-wrap: wrap;
+	/word-wrap: break-word;
+	align-self: center;
+	font-family: CODE_BOLD;
+}
+
+
+/* skillset */
+.skillset{
+	margin-top: 6em;
+	display: flex;
+	margin-left: 2em;
+	flex-grow: 1;
+	/border: 3px solid green;
+}
+.front-end{
+	position: relative;
+	width: 50%;
+}
+.back-end{
+	position: relative;
+	width: 50%;
+}
+.skillset .title{
+	font-family: CODE_regular;
+	color: white;
+	padding-left: 1em;
+	margin-bottom: 1.5em;
+	font-size: 1.7em;
+}
+.skill{
+	display: flex;
+	position: relative;
+	width: 100%;
+	/border: 5px solid green;
+	margin: 1.2em;
+	margin-left: 1.7em;
+	font-family: quicksand_medium;
+	color: white;
+}
+.fluency{
+	position: absolute;
+	right: 10%;
+	width: 60%;
+	height: 1em;
+	padding: .2em;
+	background: #FEFEFE;
+	color: black;
+}
+
+
+
+
+/* secondary skill */
+.secondary{
+	height: 100%;
+	flex-grow: 1;
+	/border: 4px solid green;
+}
+.secondary .title{
+	margin-top: 2em;
+	margin-left: .6em;
+	margin-bottom: .8em;
+	font-family: code_bold;
+	font-size: 4em;
+}
+.secondary .skill{
+	color: #222222;
+	margin-left: 2.5em;
+	display: flex;
+	flex-direction: column;
+}
+.secondary .skill span:nth-child(1){
+	font-family: dosis_bold;
+	font-size: 1.5em;
 }
