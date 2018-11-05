@@ -51,10 +51,12 @@ body{
 	font-family: code_bold;
 	font-size: 9em;
 	right: 50vw;
-	transform: translate(2em,-.9em);
+	transform: translate(1.9em,-.9em);
 	position: absolute;
 	color: #FEFEFE;
+	padding-left: -1em;
 	letter-spacing: .1em;
+	transition: opacity .4s;
 }
 .hello span{
 	color: #222222;
@@ -66,7 +68,8 @@ body{
 	-webkit-text-stroke: 3px #222222;
 	position: absolute;
 	right: 50vw;
-	transform: translate(1.85em, 0em);
+	margin-left: -5px;
+	transform: translate(2em, 0em);
 	color: #FEFEFE;
 	text-align: center;
 	margin-right: .15em;
@@ -77,26 +80,35 @@ body{
 	top: 0;
 	left: 0;
 	background: #F2F2F2;
-	width: 59.4%;
+	width: 58.4%;
 	height: 100%;
+	transform: translateX(100%);
 	position: absolute;
 	z-index: -1;
+	transition: transform .5s;
+	transition-delay: 0s;
+	transition-timing-function: ease-out;
 }
 .blackBack{
 	top: 0;
 	right: 0;
 	background: #222222;
 	width: 41.6%;
+	transform: translateX(-100%);
 	height: 100%;
 	position: absolute;
-	z-index: -1;
+	z-index: -2;
+	transition: transform .5s;
+	transition-delay: .5s;
+	transition-timing-function: ease-out;
 }
 .rubberbandContainer{
 	/background: rgba(255,255,255,.8);
+	color: #222222;
 	font-family: code_bold;
 	font-size: 6em;
 	position: absolute;
-	border: 1px solid #111111;
+	/border: 1px solid #111111;
 	align-self: center;
 	transform: translate(-.9em, 1.3em);
 	padding: .1em;
@@ -105,9 +117,43 @@ body{
 	align-self: center;
 }
 .rubberband span{
-	color: white;
+	color: #F2F2F2;
 }
 
+
+/* styles for animation */
+@keyframes rubberbandVisible{
+	100%{
+		transform: translateX(0%);
+	}
+}
+@keyframes slideHello{
+	100%{
+		transform: translate(2em, -.9em);
+	}
+}
+@keyframes slideFrom{
+	100%{
+		transform: translate(1.85em, 0em);
+	}
+}
+.blackBackVisible{
+	animation: rubberbandVisible .8s forwards;
+	animation-delay: 1s;
+	animation-timing-function: ease-in-out;
+}
+.whiteBackVisible{
+	animation: rubberbandVisible .8s .5s forwards;
+	animation-timing-function: ease-in-out;
+}
+.helloVisible{
+	animation: slideHello .7s forwards;
+	animation-timing-function: ease-in-out;
+}
+.fromVisible{
+	animation: slideFrom .7s forwards;
+	animation-timing-function: ease-in-out;
+}
 
 
 
