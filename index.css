@@ -1,4 +1,6 @@
 body{
+	height: 100vh;
+	overflow: hidden;
 	position: relative;
 	margin: 0;
 }
@@ -17,6 +19,7 @@ body{
 	left: 0;
 	height: 100vh;
 	width: 50vw;
+	transition: width .7s;
 }
 .WHITE{
 	position: relative;
@@ -51,12 +54,14 @@ body{
 	font-family: code_bold;
 	font-size: 9em;
 	right: 50vw;
-	transform: translate(1.9em,-.9em);
+	transform: translate(1.8em,-.9em);
+	opacity: 0;
 	position: absolute;
 	color: #FEFEFE;
 	padding-left: -1em;
 	letter-spacing: .1em;
-	transition: opacity .4s;
+	transition: opacity .4s, transform .6s;
+	transition-timing-function: ease-out;
 }
 .hello span{
 	color: #222222;
@@ -69,10 +74,11 @@ body{
 	position: absolute;
 	right: 50vw;
 	margin-left: -5px;
-	transform: translate(2em, 0em);
+	transform: translate(1.9em, 0em);
 	color: #FEFEFE;
+	opacity: 0;
+	transition: opacity .4s, transform .6s;
 	text-align: center;
-	margin-right: .15em;
 }
 
 /* rubberband */
@@ -85,7 +91,8 @@ body{
 	transform: translateX(100%);
 	position: absolute;
 	z-index: -1;
-	transition: transform .5s;
+	opacity: 1;
+	transition: transform .8s;
 	transition-delay: 0s;
 	transition-timing-function: ease-out;
 }
@@ -94,13 +101,9 @@ body{
 	right: 0;
 	background: #222222;
 	width: 41.6%;
-	transform: translateX(-100%);
 	height: 100%;
 	position: absolute;
 	z-index: -2;
-	transition: transform .5s;
-	transition-delay: .5s;
-	transition-timing-function: ease-out;
 }
 .rubberbandContainer{
 	/background: rgba(255,255,255,.8);
@@ -122,37 +125,19 @@ body{
 
 
 /* styles for animation */
-@keyframes rubberbandVisible{
-	100%{
-		transform: translateX(0%);
-	}
-}
-@keyframes slideHello{
-	100%{
-		transform: translate(2em, -.9em);
-	}
-}
-@keyframes slideFrom{
-	100%{
-		transform: translate(1.85em, 0em);
-	}
-}
-.blackBackVisible{
-	animation: rubberbandVisible .8s forwards;
-	animation-delay: 1s;
-	animation-timing-function: ease-in-out;
+.blackBackHidden{
+	transform: translate(-100%);
 }
 .whiteBackVisible{
-	animation: rubberbandVisible .8s .5s forwards;
-	animation-timing-function: ease-in-out;
+	transform: translateX(0%);
 }
 .helloVisible{
-	animation: slideHello .7s forwards;
-	animation-timing-function: ease-in-out;
+	transform: translate(2em, -.9em);
+	opacity: 1;
 }
 .fromVisible{
-	animation: slideFrom .7s forwards;
-	animation-timing-function: ease-in-out;
+	transform: translate(1.70em, 0em);
+	opacity: 1;
 }
 
 
@@ -164,12 +149,26 @@ body{
 /* headline */
 .whatWeDoContainer{
 	position: absolute;
-	/display: flex;
-	display: none;
+	display: flex;
 	flex-direction: row;
 	width: 100vw;
 	height: 100vh;
+	top: 100vh;
+	overflow: hidden;
 	justify-content: center;
+}
+/*styles for animation */
+.wwdVisible{
+	top: 0vh;
+}
+@keyframes slideUp{
+	100%{
+		opacity: 1;
+		top: 0px;
+	}
+}
+.visible{
+	animation: slideUp .8s forwards;
 }
 .headline{
 	font-family: code_bold;
@@ -177,8 +176,9 @@ body{
 	font-size: 5em;
 	position: absolute;
 	align-self: flex-end;
-	/top: 0;
-	margin-top: .5em;
+	padding-top: .5em;
+	top: 50px;
+	opacity: 0;
 	transform: translateX(-.5em);
 }
 .leftContent{
@@ -192,7 +192,11 @@ body{
 	position: relative;
 	width: 70vw;
 }
-
+.primary .title{
+	position: relative;
+	opacity: 0;
+	top: 40px;
+}
 .primary .title > span{
 	position: relative;
 	color: #FEFEFE;
@@ -224,6 +228,11 @@ body{
 	justify-content: space-between;
 }
 .features .box{
+	position: relative;
+	/*styles for animation */
+	opacity: 0;
+	top: 50px;
+	/* -- */
 	display: flex;
 	justify-content: center;
 	padding: 1em 2em;
@@ -256,6 +265,8 @@ body{
 	width: 50%;
 }
 .skillset .title{
+	opacity: 0;
+	top: 50px;
 	font-family: CODE_regular;
 	color: white;
 	padding-left: 1em;
@@ -263,6 +274,8 @@ body{
 	font-size: 1.7em;
 }
 .skill{
+	opacity: 0;
+	top: 50px;
 	display: flex;
 	position: relative;
 	width: 100%;
@@ -292,6 +305,8 @@ body{
 	/border: 4px solid green;
 }
 .secondary .title{
+	position: relative;
+	top: 50px;
 	margin-top: 2em;
 	margin-left: .6em;
 	margin-bottom: .8em;
@@ -299,6 +314,7 @@ body{
 	font-size: 4em;
 }
 .secondary .skill{
+	top: 50px;
 	color: #222222;
 	margin-left: 2.5em;
 	display: flex;
