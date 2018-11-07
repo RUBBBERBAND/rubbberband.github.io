@@ -126,9 +126,11 @@ body{
 
 /* styles for animation */
 .blackBackHidden{
+	opacity: 1;
 	transform: translate(-100%);
 }
 .whiteBackVisible{
+	opacity: 1;
 	transform: translateX(0%);
 }
 .helloVisible{
@@ -163,12 +165,25 @@ body{
 }
 @keyframes slideUp{
 	100%{
+		top: 0;
 		opacity: 1;
-		top: 0px;
+	}
+}
+@keyframes slideDown{
+	100%{
+		top: 50px;
+		opacity: 0;
 	}
 }
 .visible{
-	animation: slideUp .8s forwards;
+	transition: .8s;
+	opacity: 1 !important;
+	top: 0 !important;
+}
+.hidden{
+	transition: .8s;
+	top: 50px !important;
+	opacity: 0 !important;
 }
 .headline{
 	font-family: code_bold;
@@ -306,6 +321,7 @@ body{
 }
 .secondary .title{
 	position: relative;
+	opacity: 0;
 	top: 50px;
 	margin-top: 2em;
 	margin-left: .6em;
