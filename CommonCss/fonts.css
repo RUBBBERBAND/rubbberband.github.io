@@ -31,6 +31,10 @@
 	src: url("../fonts/dosis_family/Dosis-ExtraBold.otf")
 }
 @font-face{
+	font-family: quicksand_light;
+	src: url("../fonts/Quicksand/Quicksand-light.ttf")
+}
+@font-face{
 	font-family: quicksand_regular;
 	src: url("../fonts/Quicksand/Quicksand-Regular.ttf")
 }
