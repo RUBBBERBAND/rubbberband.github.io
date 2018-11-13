@@ -40,8 +40,8 @@ a{
 	top: 0;
 	width: 100vw;
 	height: 100vh;
-	/display: flex;
-	display: none;
+	display: flex;
+	/display: none;
 	flex-direction: column;
 	justify-content: center;
 }
@@ -95,7 +95,7 @@ a{
 	transform: translateX(100%);
 	position: absolute;
 	z-index: -1;
-	opacity: 1;
+	opacity: 0;
 	transition: transform .8s;
 	transition-delay: 0s;
 	transition-timing-function: ease-out;
@@ -103,11 +103,14 @@ a{
 .blackBack{
 	top: 0;
 	right: 0;
+	opacity: 0;
 	background: #222222;
 	width: 41.6%;
 	height: 100%;
 	position: absolute;
 	z-index: -2;
+	transition: .4s;
+	transform: translate(0%);
 }
 .rubberbandContainer{
 	/background: rgba(255,255,255,.8);
@@ -123,27 +126,33 @@ a{
 	margin-left: 1vw;
 	align-self: center;
 }
+.rubberband{
+	opacity: 0;
+}
 .rubberband span{
 	color: #F2F2F2;
 }
 
 
 /* styles for animation */
-.blackBackHidden{
-	opacity: 1;
-	transform: translate(-100%);
+.blackBackVisible{
+	opacity: 1 !important;
+	transform: translateX(0%);
 }
 .whiteBackVisible{
-	opacity: 1;
+	opacity: 1 !important;
 	transform: translateX(0%);
 }
 .helloVisible{
 	transform: translate(2em, -.9em);
-	opacity: 1;
+	opacity: 1 !important;
 }
 .fromVisible{
 	transform: translate(1.70em, 0em);
-	opacity: 1;
+	opacity: 1 !important;
+}
+.rubberbandVisible{
+	opacity: 1 !important;
 }
 
 
@@ -155,8 +164,8 @@ a{
 /* headline */
 .whatWeDoContainer{
 	position: absolute;
-	/display: flex;
-	display: none;
+	display: flex;
+	/display: none;
 	flex-direction: row;
 	width: 100vw;
 	height: 100vh;
@@ -166,7 +175,7 @@ a{
 }
 /*styles for animation */
 .wwdVisible{
-	top: 0vh;
+	top: 0vh !important;
 }
 @keyframes slideUp{
 	100%{
@@ -354,14 +363,18 @@ a{
 
 /* projects */
 .whatWeDidContainer{
+	top: 100vh;
 	height: 100vh;
 	width: 100vw;
 	display: flex;
+	/display: none;
 	flex-direction: row;
+	position: absolute;
+	overflow: hidden;
 }
 .whatWeDidContainer .headline{
-	top: 0px;
-	opacity: 1;
+	top: 50px;
+	opacity: 0;
 }
 .whatWeDidContainer .headline > span{
 	color: #222222;
@@ -376,6 +389,9 @@ a{
 	width: 100vw;
 }
 .category{
+	position: relative;
+	top: 50px;
+	opacity: 0;
 	display: flex;
 	flex-direction: column;
 	width: 20vw;
@@ -384,6 +400,9 @@ a{
 	position: relative;
 }
 .category img{
+	position: relative;
+	top: 50px;
+	opacity: 0;
 	padding: 1em;
 	position: relative;
 	width: 40%;
@@ -392,6 +411,8 @@ a{
 }
 .category > .title{
 	position: relative;
+	top: 50px;
+	opacity: 0;
 	align-self: center;
 	font-family: quicksand_regular;
 	font-size: 1.3em;
@@ -403,6 +424,9 @@ a{
 	background: #222222;
 }
 .projects{
+	position: relative;
+	top: 50px;
+	opacity: 0;
 	margin-top: 1.2em;
 }
 .project{
