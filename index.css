@@ -473,3 +473,52 @@ a{
 	border-bottom: .3em solid black;
 	transition: .2s;
 }
+/*-----what we are----------*/
+.dev {
+	font-family: code_bold;
+	margin-top: 3%;
+}
+.first{
+	color: #F1F1F1
+}
+.second{
+	color: #222222;
+}
+
+.dev .headline1{
+	font-size: 5em;
+	float: right;
+}
+.dev .headline2{
+	float: left;
+	font-size: 5em;
+}
+.about{
+	text-align: center;
+	font-size: 2.5em;
+	margin: auto;
+	width: 65%;
+	padding-top: 20%;
+	/background: #F1F1F1;
+}
+.dp{
+	margin: auto;
+	margin-bottom: 3%;
+}
+.first .dp{
+	width: 200px;
+	height: 200px;
+	background: #F1F1F1;
+	border-radius: 50%;
+}
+.second .dp{
+	width: 200px;
+	height: 200px;
+	background: #222222;
+	border-radius: 50%;
+}
+.bio{
+	text-align: left;
+	font-size: .5em;
+	margin-top: 2%;
+}
