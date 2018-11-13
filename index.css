@@ -162,6 +162,7 @@ a{
 
 
 /* headline */
+
 .whatWeDoContainer{
 	position: absolute;
 	display: flex;
@@ -200,16 +201,35 @@ a{
 	opacity: 0 !important;
 }
 .headline{
+	display: flex;
 	font-family: code_bold;
 	color: white;
 	font-size: 5em;
 	position: absolute;
-	padding-top: .5em;
+	margin-top: .5em;
 	top: 50px;
 	opacity: 0;
 	left: 50%;
+	overflow: hidden;
+	height: 1em;
 	transform: translateX(-42%);
 }
+.headline > div{
+	margin-left: .5em;
+	transition: .7s;
+}
+.do{
+	margin-top: 0em;
+	color: #FEFEFE;
+}
+.did{
+	margin-top: -1em;
+	color: #222222;
+}
+.are{
+	margin-top: -2em;
+}
+
 .leftContent{
 	position: relative;
 	width: 70vwvw;

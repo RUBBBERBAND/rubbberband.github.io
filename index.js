@@ -21,7 +21,7 @@ function addClassTo(screenClassList){
 			classToAdd = screenClass[1],
 			add = screenClass[2],
 			addTimes = screenClass[3];
-		console.log(classArray);
+		//console.log(classArray);
 		//addTimes array contains the time difference from the beginning of the function call to the time when the class is added
 		if(addTimes.length == 1){
 			classArray.forEach(function(){
@@ -76,17 +76,20 @@ var screenClasses = {
 						 ['hidden'],
 						 false,
 						 [0] ],
-				  
-					3: [ ['.whatWeDoContainer > .headline', '.primary .title', '.skill', '.features .box', '.skillset .title', '.secondary .title'],
+				    3: [ ['.headline > div'],
+					     ['do'],
+					     true,
+					     [100] ],
+					4: [ ['.whatWeDoContainer > .headline', '.primary .title', '.skill', '.features .box', '.skillset .title', '.secondary .title'],
 						 ['visible'],
 						 true, 
 						 [100, 300, 500, 700, 900, 1000] ] },
 	
-	     'hide': {  1: [ ['.whatWeDoContainer > .headline', '.primary .title', '.skill', '.features .box', '.skillset .title', '.secondary .title'],
+	     'hide': {  1: [ ['.primary .title', '.skill', '.features .box', '.skillset .title', '.secondary .title'],
 						 ['visible'],
 						 false, 
-						 [100, 300, 500, 700, 900, 1000] ],
-					2: [ ['.whatWeDoContainer > .headline', '.primary .title', '.skill', '.features .box', '.skillset .title', '.secondary .title'],
+						 [100, 300, 500, 700, 900] ],
+					2: [ ['.primary .title', '.skill', '.features .box', '.skillset .title', '.secondary .title'],
 						 ['hidden'],
 						 true,
 						 [0] ] } },
@@ -95,28 +98,30 @@ var screenClasses = {
 						 ['wwdVisible'],
 						 true,
 						 [0] ],
-				  
-	    			2: [ ['.whatWeDidContainer > .headline', '.category', '.category img', '.category > .title', '.projects'],
+	    			2: [ ['.category', '.category img', '.category > .title', '.projects'],
 						 ['hidden'],
 						 false,
 						 [0] ],
-				  
-					3: [ ['.whatWeDidContainer > .headline', '.category', '.category img', '.category > .title', '.projects'],
+				    3: [ ['.headline > div'],
+					     ['did'],
+					     true,
+					     [100] ],
+					4: [ [ '.category', '.category img', '.category > .title', '.projects'],
 						 ['visible'],
 						 true,
-						 [100, 300, 500, 700, 900] ] },
+						 [100, 300, 500, 700] ] },
 		
-	     'hide': {  1: [ ['.whatWeDidContainer > .headline', '.category', '.category img', '.category > .title', '.projects'],
-						 ['hidden'],
-						 true,
-						 [0] ],
-				 	2: [ ['.whatWeDidContainer > .headline', '.category', '.category img', '.category > .title', '.projects'],
+	     'hide': {  1: [ ['.headline > div'],
+					     ['did'],
+					     false,
+					     [100] ], 
+					2: [ ['.category', '.category img', '.category > .title', '.projects'],
 						 ['visible'],
 						 false,
-						 [100, 300, 500, 700, 900] ],
-				 	3: [ ['.whatWeDidContainer'],
-						 ['wwdVisible'],
-						 false,
+						 [100, 300, 500, 700] ],
+					3: [ [ '.category', '.category img', '.category > .title', '.projects'],
+						 ['hidden'],
+						 true,
 						 [0] ] } }
 }
 
@@ -171,13 +176,21 @@ document.addEventListener('wheel', function(e){
 			//cancels out the extra scroll after the last screen of the full page
 			if(currentScreen > 3){
 				scrolling = false;
-				currentScreen = 1;
+				currentScreen = 3;
 			}
 		}else if(direction == false){
 			currentScreen--;
 			console.log("backward and " + lastScreen);
 			if(lastScreen == 2){
 				addClassTo(screenClasses[2]['hide']);
+				addClassTo({1: [ ['.whatWeDoContainer > .headline'],
+					    		['visible'],
+					    		false,
+					    		[100] ],
+						    2: [ ['.whatWeDoContainer > .headline'],
+					    		['hidden'],
+					    		true,
+					    		[100] ]});
 				BLACK.style.width = 50 + 'vw';
 				setTimeout(function(){
 					addClassTo(screenClasses[1]['show']);
