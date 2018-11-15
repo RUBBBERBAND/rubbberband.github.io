@@ -1,3 +1,4 @@
+//for setting the language profieciency bar in whatwedocontainer
 for(let i=0; i<document.getElementsByClassName('fluency').length; i++){
 	let elem = document.getElementsByClassName('fluency')[i];
 	let fluency = elem.dataset.fluency;
@@ -7,10 +8,6 @@ for(let i=0; i<document.getElementsByClassName('fluency').length; i++){
 }
 
 var currentScreen = 1;
-document.addEventListener('scroll', function(){
-	console.log("gg");
-})
-
 
 function addClassTo(screenClassList){
 	console.log(screenClassList);
@@ -83,7 +80,7 @@ var screenClasses = {
 					4: [ ['.whatWeDoContainer > .headline', '.primary .title', '.skill', '.features .box', '.skillset .title', '.secondary .title'],
 						 ['visible'],
 						 true, 
-						 [100, 300, 500, 700, 900, 1000] ] },
+						 [80, 250, 370, 500, 600, 650] ] },
 	
 	     'hide': {  1: [ ['.primary .title', '.skill', '.features .box', '.skillset .title', '.secondary .title'],
 						 ['visible'],
@@ -122,7 +119,31 @@ var screenClasses = {
 					3: [ [ '.category', '.category img', '.category > .title', '.projects'],
 						 ['hidden'],
 						 true,
-						 [0] ] } }
+						 [0] ] } },
+	4: { 'show': {  1: [ ['.headline div'],
+					     ['are'],
+						 true,
+					     [200] ],
+					2: [ ['.whatWeAreContainer'],
+						 ['wwdVisible'],
+						 true,
+						 [0] ],
+					3: [ ['.dev', '.dev .dp', '.dev .name', '.dev .bio'],
+					     ['visible'],
+						 true,
+					     [100,200,300,400] ] },
+	     'hide': {  1: [ ['.whatWeAreContainer'],
+						 ['wwdVisible'],
+						 true,
+						 [0] ],
+					2: [ ['.dev', '.dev .dp', '.dev .name', '.dev .bio'],
+					     ['visible'],
+						 false,
+					     [100,200,300,400] ],
+					3: [ ['.headline div'],
+					     ['are'],
+						 false,
+					     [200] ] } }
 }
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -133,19 +154,18 @@ document.addEventListener('DOMContentLoaded', function(){
 	}, 100);
 })
 
-var currentScreen = 0, lastScreen = 0;
+var currentScreen = 1, lastScreen = 1; //the first screen is screen 1
 var scrolling = false;
 var direction = true;  //true means downward scroll
 var BLACK = document.getElementsByClassName('BLACK')[0];
 document.addEventListener('wheel', function(e){
 	if(!scrolling){
-		
-		console.log(lastScreen + " & " + currentScreen);
+	
 		//checks if the user is scrolling up or down
-		if(e.deltaY == 100 &&  scrolling == false){
+		if(e.deltaY == 100){
 			scrolling = true;
 			direction = true;
-		}else if(e.deltaY == -100 && scrolling == false){
+		}else if(e.deltaY == -100){
 			scrolling = true;
 			direction = false;
 		}
@@ -161,10 +181,19 @@ document.addEventListener('wheel', function(e){
 				}, 500);
 			}else if(lastScreen == 2){
 				BLACK.style.width = 50 + 'vw';
-				addClassTo(screenClasses[2]['hide'])
+				addClassTo(screenClasses[2]['hide']);
+				document.querySelector('.headline div').classList.add('do');
 				setTimeout(function(){
 					addClassTo(screenClasses[3]['show']);
 				}, 500)
+			}else if(lastScreen == 3){
+				addClassTo(screenClasses[3]['hide']);
+				setTimeout(function(){
+					document.querySelector('.headline div').classList.add('did');	
+				}, 102);
+				setTimeout(function(){
+					addClassTo(screenClasses[4]['show']);
+				}, 500);
 			}
 			
 			//cancels the extra scroll events in case the user scrolls again before the animation completes
@@ -174,9 +203,9 @@ document.addEventListener('wheel', function(e){
 			}, 500);
 			
 			//cancels out the extra scroll after the last screen of the full page
-			if(currentScreen > 3){
+			if(currentScreen > 4){
 				scrolling = false;
-				currentScreen = 3;
+				currentScreen = 4;
 			}
 		}else if(direction == false){
 			currentScreen--;
@@ -200,6 +229,11 @@ document.addEventListener('wheel', function(e){
 				BLACK.style.width = 70 + 'vw';
 				setTimeout(function(){
 					addClassTo(screenClasses[2]['show']);
+				}, 500);
+			}else if(lastScreen == 4){
+				addClassTo(screenClasses[4]['hide']);
+				setTimeout(function(){
+					addClassTo(screenClasses[3]['show']);
 				}, 500);
 			}
 			
