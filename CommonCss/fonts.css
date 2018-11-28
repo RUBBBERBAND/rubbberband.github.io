@@ -4,7 +4,7 @@
 }
 @font-face{
 	font-family: CODE_regular;
-	src: url(../fonts/CODE%20light.otf);
+	src: url(../fonts/CODE%20Light.otf);
 }
 @font-face{
 	font-family: Neoteric_bold;
@@ -24,7 +24,7 @@
 }
 @font-face{
 	font-family: Dosis_bold;
-	src: url("../fonts/dosis_family/Dosis-bold.otf")
+	src: url("../fonts/dosis_family/Dosis-Bold.otf")
 }
 @font-face{
 	font-family: Dosis_ExtraBold;

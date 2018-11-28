@@ -202,12 +202,12 @@ var direction = true;  //true means downward scroll
 var BLACK = document.getElementsByClassName('BLACK')[0];
 document.addEventListener('wheel', function(e){
 	if(!scrolling){
-
+		console.log("detected" + e.deltaY);
 		//checks if the user is scrolling up or down
-		if(e.deltaY == 100){
+		if(e.deltaY == 100 || e.deltaY == 3){
 			scrolling = true;
 			direction = true;
-		}else if(e.deltaY == -100){
+		}else if(e.deltaY == -100 || e.deltaY == -3){
 			scrolling = true;
 			direction = false;
 		}

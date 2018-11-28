@@ -220,15 +220,15 @@ a{
 	transition: .9s;
 }
 .do{
-	margin-top: 0em;
+	margin-top: 0;
 	color: #FEFEFE;
 }
 .did{
-	margin-top: -1em;
+	margin-top: -22%;
 	color: #222222;
 }
 .are{
-	margin-top: -2em;
+	margin-top: -44%;
 	color: #222222;
 }
 
@@ -251,7 +251,7 @@ a{
 .primary .title > span{
 	position: relative;
 	color: #FEFEFE;
-	font-family: code_REGULAR;
+	font-family: CODE_regular;
 	padding-left: 1.5em;
 	font-size: 2.2em;
 }
@@ -373,7 +373,7 @@ a{
 	flex-direction: column;
 }
 .secondary .skill span:nth-child(1){
-	font-family: dosis_bold;
+	font-family: Dosis_bold;
 	font-size: 1.5em;
 }
 
