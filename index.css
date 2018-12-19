@@ -216,6 +216,9 @@ a{
 	transform: translateX(-42%);
 }
 .headline > div{
+	display: flex;
+	flex-direction: column;
+	height: 1em !important;
 	margin-left: .5em;
 	transition: .9s;
 	transition-timing-function: ease;
@@ -225,19 +228,11 @@ a{
 	color: #FEFEFE;
 }
 .did{
-<<<<<<< HEAD
-	margin-top: -22.5%;
-	color: #222222;
-}
-.are{
-	margin-top: -45%;
-=======
 	margin-top: -1em;
 	color: #222222;
 }
 .are{
 	margin-top: -2em;
->>>>>>> 9546cbd1bcd69ac66bf347efedd86ac8ce21bb7a
 	color: #222222;
 }
 
