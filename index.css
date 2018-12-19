@@ -218,17 +218,18 @@ a{
 .headline > div{
 	margin-left: .5em;
 	transition: .9s;
+	transition-timing-function: ease;
 }
 .do{
 	margin-top: 0;
 	color: #FEFEFE;
 }
 .did{
-	margin-top: -22%;
+	margin-top: -22.5%;
 	color: #222222;
 }
 .are{
-	margin-top: -44%;
+	margin-top: -45%;
 	color: #222222;
 }
 
