@@ -225,11 +225,19 @@ a{
 	color: #FEFEFE;
 }
 .did{
+<<<<<<< HEAD
 	margin-top: -22.5%;
 	color: #222222;
 }
 .are{
 	margin-top: -45%;
+=======
+	margin-top: -1em;
+	color: #222222;
+}
+.are{
+	margin-top: -2em;
+>>>>>>> 9546cbd1bcd69ac66bf347efedd86ac8ce21bb7a
 	color: #222222;
 }
 
@@ -257,10 +265,11 @@ a{
 	font-size: 2.2em;
 }
 .primary .title > span > span{
+	position: relative;
 	font-family: quicksand_medium;
 	color: #000000;
 }
-.primary .title span::after{
+.primary .title span > span::after{
 	position: absolute;
 	right: -.1em;
 	content: '';

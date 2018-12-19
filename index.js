@@ -86,7 +86,7 @@ var screenClasses = {
 					4: [ ['.whatWeDoContainer > .headline', '.primary .title', '.skill', '.features .box', '.skillset .title', '.secondary .title'],
 						 ['visible'],
 						 true,
-						 [80, 250, 370, 500, 600, 650] ] },
+						 [80, 250, 370, 400, 450, 500] ] },
 
 	     'hide': {  1: [ ['.primary .title', '.skill', '.features .box', '.skillset .title', '.secondary .title'],
 						 ['visible'],
@@ -138,15 +138,11 @@ var screenClasses = {
 					     ['visible'],
 						 true,
 					     [100,200,300,400] ] },
-	     'hide': {  1: [ ['.whatWeAreContainer'],
-						 ['wwdVisible'],
-						 false,
-						 [0] ],
-					2: [ ['.dev', '.dev .dp', '.dev .name', '.dev .bio'],
+	     'hide': {	1: [ ['.dev', '.dev .dp', '.dev .name', '.dev .bio'],
 					     ['visible'],
 						 false,
 					     [100,200,300,400] ],
-					3: [ ['.headline div'],
+					2: [ ['.headline div'],
 					     ['are'],
 						 false,
 					     [200] ] } },
@@ -170,22 +166,22 @@ var screenClasses = {
 					     ['are'],
 						 true,
 					     [200] ] } ,
-		 'hide': {	1: [ ['.contact_us_container'],
-						 ['wwdVisible'],
-						 false,
-						 [0] ],
-		 			2: [ ['.contact_us > .title', '.contact_us .email', '.contact_us .message', 'contact_us .submit', '.contact_us_container .padder' , '.contact_us_container .submit'],
+		 'hide': {	1: [ ['.contact_us > .title', '.contact_us .email', '.contact_us .message', 'contact_us .submit', '.contact_us_container .padder' , '.contact_us_container .submit'],
 						 ['visible'],
 						 false,
 						 [200] ],
-					3: [ ['.whatWeDoContainer > .headline'],
+					2: [ ['.whatWeDoContainer > .headline'],
 			    		 ['visible'],
 			    		 true,
 			    		 [700] ],
-				    4: [ ['.whatWeDoContainer > .headline'],
+				    3: [ ['.whatWeDoContainer > .headline'],
 			    		 ['hidden'],
 			    		 false,
-			    		 [700] ] } }
+			    		 [700] ],
+			    	4: [ ['.contact_us_container'],
+			    		 ['wwdVisible'],
+			    		 false,
+			    		 [340] ] } }
 }
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -239,12 +235,12 @@ document.addEventListener('wheel', function(e){
 					addClassTo(screenClasses[4]['show']);
 				}, 500);
 			}else if(lastScreen == 4){
-				BLACK.style.width = 20 + 'vw';
 				document.querySelector('.whatWeDoContainer > .headline').style.display = 'none';
 				addClassTo(screenClasses[4]['hide']);
+				setTimeout(function(){BLACK.style.width = 20 + 'vw';}, 300);
 				setTimeout(function(){
 					addClassTo(screenClasses[5]['show']);
-				}, 500);
+				}, 800);
 			}
 
 			//cancels the extra scroll events in case the user scrolls again before the animation completes
@@ -282,10 +278,10 @@ document.addEventListener('wheel', function(e){
 			}else if(lastScreen == 5){
 				document.querySelector('.whatWeDoContainer > .headline').style.display = 'flex';
 				addClassTo(screenClasses[5]['hide']);
-				BLACK.style.width = 50 + 'vw';
+				setTimeout(function(){BLACK.style.width = 50 + 'vw'}, 300);
 				setTimeout(function(){
 					addClassTo(screenClasses[4]['show']);
-				}, 500);
+				}, 800);
 			}
 
 			setTimeout(function(){
