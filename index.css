@@ -202,11 +202,13 @@ a{
 	}
 }
 .visible{
+	visibility: visible;
 	transition: .8s;
 	opacity: 1 !important;
 	top: 0 !important;
 }
 .hidden{
+	visibility: hidden;
 	transition: .8s;
 	top: 50px !important;
 	opacity: 0 !important;
