@@ -41,7 +41,7 @@
     .rubberbandContainer{
         transform: translate(0em,1.2em);
         flex-direction: column;
-        font-size: 8em;
+        font-size: 10vw;
     }
     .whiteBack{
         display: none;
@@ -74,17 +74,19 @@
     .whatWeDoContainer .leftContent{
         top: 18vh;
         width: 100vw;
+        margin-left: -2vw;
     }
     .features{
         position: relative;
         top: .5em;
-        margin-left: 1em;
+        /margin-left: 1vw;
     }
     .features .box{
-        font-size: 1em;
-        padding: 1em .8em;
+        font-size: 1.1vh;
+        padding: 1.8vw 1.8vw;
     }
     .skillset{
+        margin-top: 5vh;
         font-size: 1.2em;
         margin-left: 1em;
         width: 100vw;
@@ -98,6 +100,9 @@
         position: absolute;
         top: 60vh;
     }
+    .secondary .title{
+        font-size: 7vw;
+    }
     .secondary .skills{
         margin-left: 1em;
         display: flex;
@@ -107,7 +112,7 @@
     }
     .secondary .skill{
         margin-top: 0em;
-        font-size: 1.45em;
+        font-size: 3vw;
         width: 40vw;
         margin-left: 1em;
     }
@@ -123,7 +128,7 @@
         margin-right: 1.5em;
         width: 41vw;
         height: 42vh;
-        font-size: 1.9em;
+        font-size: 2.4vw;
         background-color: rgba(230,230,230,1);
     }
     .category img{
@@ -178,64 +183,6 @@
     .dev:nth-child(2) > .name, .dev:nth-child(2) > .bio{
         filter: invert(0);
     }
- /*   .dev .dp_details{
-        justify-content: center;
-        width: 100%;
-        display: flex;
-        /border: 1px solid green;
-    }
-    .dp_details .dp{
-        padding: 1em;
-        width: 50%;
-        transition: .8s;
-    }
-    .dev .name{
-        align-self: center;
-        text-align: center;
-        color: white;
-        padding-top: 1em;
-        font-family: quicksand_bold;
-        font-size: 4.1em;
-        transition: .8s;
-    }
-    .dev .bio{
-        font-family: quicksand_regular;
-        color: white;
-        font-size: 2.1em;
-        padding: 1em 1em;
-        text-align: center;
-        transition: .8s;
-    }
-    .dev:nth-child(3){
-        display: block;
-        margin-top: 0;
-        width: 100vw;
-        height: 30vh;
-    }
-    .dev:nth-child(3) .dp_details{
-        float: left;
-        min-height: 100%;
-        width: 35%;
-        display: flex;
-        margin-left: 1em;
-        margin-right: 1.5em;
-    }
-    .dev:nth-child(3) .dp_details .dp{
-        height: 100%;
-        width: 85%;
-    }
-    .dev:nth-child(3) .name{
-        font-size: 4em;
-        margin: 0em 2em;
-        margin-top: .8em;
-        text-align: left;
-        color: black;
-    }
-    .dev:nth-child(3) .bio{
-        font-size: 2.5em;
-        color: black;
-        text-align: left;
-    }*/
     .whatWeAreContainer{
         flex-direction: column;
         justify-content: flex-end;
@@ -280,7 +227,7 @@
         padding: 0;
         padding-right: 1em;
         padding-top: 1em;
-        font-size: 2.2em;
+        font-size: 3vw;
         color: black;
         text-align: left;
         color: #fefefe;
@@ -367,5 +314,41 @@
     icon_credits > div{
         margin-left: 1.2em;
         margin-top: 1em
+    }
+}
+
+@media screen and (max-height: 480px){
+    .from{
+        font-size: 6em;
+        -webkit-text-stroke: 1px #FEFEFE;
+        margin-top: -2em;
+    }
+    .leftContent{
+        top: 5vh !important;
+    }
+    .BWcontainer .ARE{
+        height: 70vh !important;
+    }
+    .category > .title{
+        font-size: 1.4em;
+        margin-top: .8em;
+    }
+    .secondary{
+        margin-top: -2vh;
+    }
+    .headline{
+        transform: translate(-35%, -30%);
+        padding-left: 0em;
+        margin-left: 0em;
+    }
+    .category:nth-child(4), .category:nth-child(3){
+        margin-top: 2em;
+        height: 36vh;
+    }
+    .project > .description{
+        font-size: 2vw;
+    }
+    .whatWeAreContainer{
+        margin-top: -2vh;
     }
 }

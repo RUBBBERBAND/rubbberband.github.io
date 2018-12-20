@@ -32,7 +32,7 @@ a{
 	width: 50vw;
 }
 .BWcontainer .ARE{
-	width: 69vw;
+	width: 69.5vw;
 }
 .BWcontainer .CONTACT{
 	width: 20vw;
@@ -567,6 +567,12 @@ a{
 	padding: 2em 3em;
 	text-align: center;
 	transition: .8s;
+}
+.dev:nth-child(2){
+	/width: 30vw;
+}
+.dev:nth-child(3) .dp{
+	/width: 55%;
 }
 .dev:nth-child(3) .name, .dev:nth-child(3) .bio{
     color: black;
